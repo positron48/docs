@@ -21,6 +21,7 @@ namespace App;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Bolt\Controller\Backend\BackendZoneInterface;
+use Bolt\Controller\TwigAwareController;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserContentController extends TwigAwareController implements BackendZoneInterface
