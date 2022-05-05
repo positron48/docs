@@ -139,6 +139,18 @@ class UserContentMenu implements ExtensionBackendMenuInterface
 }
 ```
 
+Also you need register `UserContentMenu` service on `services.yaml`:
+
+```yaml
+services:
+  App\UserContentMenu:
+    class: \App\UserContentMenu
+    arguments: [ '@Symfony\Component\Routing\Generator\UrlGeneratorInterface' ]
+    tags: [ 'bolt.extension_backend_menu' ]
+```
+
+Finally clear cache and menu will be shown on sidebar: `php bin/console cache:clear`;
+
 [layout-link]: https://github.com/bolt/core/blob/master/templates/_base/layout.html.twig
 [blank-layout-link]: https://github.com/bolt/core/blob/master/templates/_base/layout_blank.html.twig
 [all-templates]: https://github.com/bolt/core/tree/master/templates
